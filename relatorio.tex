@@ -1,0 +1,117 @@
+% texlive, texlive-publishers, texlive-lang-portuguese
+
+\documentclass[a4paper,openright, oneside, article, 12pt, brazil]{abntex2}
+
+\usepackage{indentfirst}
+\usepackage[alf, abnt-full-initials=yes]{abntex2cite}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{univesp_preambulo}
+\usepackage{fancyhdr}
+\usepackage{subcaption}
+
+
+\titulo{Título do trabalho (Frase curta que sintetize o foco do trabalho)}
+\tituloabstract{Work title (short phrase that summarizes work focus)}
+\curso{(incluir seu curso)}
+\autor{
+    Fulano Fulanado \\
+    Siclano Siclanado \\
+    Beltrano Beltranado
+}
+\autoresbibliografia{
+    FULANADO, Fulano;
+    SICLANADO, Siclano;
+    BELTRANADO, Beltrano;
+}
+\local{Cidade - SP}
+\data{ano}
+\tutor{(Nome do Tutor)}
+
+% O link do youtube pode ser omitido (apague a linha ou comente-a)
+% Quando usado, desenha uma caixa e coloca o link dentro conforme padrão
+\linkyoutube{https://www.youtube.com/video-qualquer}
+
+\begin{document}
+
+\imprimircapa
+
+\imprimirfolhaderosto
+
+\imprimirresumo
+{\input{resumo}}
+{Palavra 1; Palavra 2; Palavra 3; Palavra 4}
+
+\imprimirabstract
+{\input{abstract}}
+{Keyword 1; Keyword 2; Keyword 3; Keyword 4}
+	
+\newpage
+\listoffigures*
+
+\newpage
+\tableofcontents*
+
+\textual
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\thepage}
+\fancyhead[L]{\nouppercase{\rightmark}}
+
+\newpage
+\section{INTRODUÇÃO}
+\input{introducao}
+
+\newpage
+\section{DESENVOLVIMENTO}
+
+\subsection{PROBLEMA E OBJETIVOS}
+\input{problema_e_objetivos}
+
+\subsection{JUSTIFICATIVA}
+\input{justificativa}
+
+\subsection{FUNDAMENTAÇÃO TEÓRICA}
+\input{fundamentacao_teorica}
+
+\subsection{APLICAÇÃO DAS DISCIPLINAS ESTUDADAS NO PROJETO INTEGRADOR}
+\input{aplicacao_das_disciplinas}
+
+\subsection{METODOLOGIA}
+\input{metodologia}
+
+\newpage
+\section{RESULTADOS}
+
+\subsection{SOLUÇÃO INICIAL}
+\input{solucao_inicial}
+
+\subsection{SOLUÇÃO FINAL}
+\input{solucao_final}
+
+\newpage
+\section{CONSIDERAÇÕES FINAIS}
+\input{consideracoes_finais}
+
+
+\newpage
+\postextual
+
+\bibliography{bibliografia}
+
+\anexos
+
+\newpage
+\chapter{opcional}
+\input{anexo_a}
+
+\apendices
+
+\newpage
+\chapter{opcional}
+\input{apendice_a}
+
+\end{document}

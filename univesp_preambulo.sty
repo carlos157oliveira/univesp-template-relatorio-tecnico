@@ -1,0 +1,134 @@
+\usepackage{xcolor}
+\usepackage{anyfontsize}
+
+%\newcommand{\titulo}[1]{\gdef\@title{#1}}
+
+\newcommand{\fontfourteen}{\fontsize{14}{16.8} \selectfont}
+\newcommand{\fontsixteen}{\fontsize{16}{19.2} \selectfont}
+
+\newcommand{\tutor}[1]{\gdef\@tutor{#1}}
+\newcommand{\autoresbibliografia}[1]{\gdef\@autoresbibliografia{#1}}
+%\newcommand{\prointnumero}[1]{\gdef\@prointnumero{#1}}
+%\newcommand{\temanorteador}[1]{\gdef\@temanorteador{#1}}
+\newcommand{\linkyoutube}[1]{\gdef\@linkyoutube{#1}}
+\newcommand{\palavraschave}[1]{\gdef\@palavraschave{#1}}
+\newcommand{\curso}[1]{\gdef\@curso{#1}}
+\newcommand{\tituloabstract}[1]{\gdef\@tituloabstract{#1}}
+
+\renewcommand{\imprimircapa}{
+	\begin{capa}
+		\fontfourteen
+		\centering
+		\textbf{
+			%\color{darkgray} 
+			\fontsize{15.3}{19.2}
+			 \selectfont UNIVERSIDADE~VIRTUAL~DO~ESTADO~DE~SÃO~PAULO
+		}
+		\vfill
+		%~ \bigskip
+		%~ \bigskip
+		%~ \bigskip
+		%~ \bigskip
+		%~ \bigskip
+		
+		\imprimirautor
+		
+		\vfill
+		
+		\textbf{\imprimirtitulo}
+		
+		
+		\ifdefined\@linkyoutube
+		
+			\vfill
+			
+			\begin{framed}
+				\textbf{ Apresentação do Projeto Integrador:}	\vspace{1cm}\\
+				\textless \@linkyoutube \textgreater
+			\end{framed}
+			
+		\else
+		
+			\vfill
+			\vfill
+			
+		\fi
+	
+		\vfill
+		
+		\imprimirlocal \\
+		\imprimirdata
+	\end{capa}
+	\newpage
+}
+
+\renewcommand{\folhaderostocontent}{
+	\begin{center}
+		\fontfourteen
+		\textbf{\fontsize{15.3}{18} \selectfont UNIVERSIDADE~VIRTUAL~DO~ESTADO~DE~SÃO~PAULO}
+		
+		\vfill
+		
+		\textbf{\imprimirtitulo}
+		
+		\vfill
+		{
+			
+		\setlength{\leftskip}{7cm}
+		{	
+			\fontsize{12}{14.4} \selectfont
+		Relatório Técnico-Científico apresentado na disciplina de Projeto Integrador para o curso de \@curso\ da Universidade Virtual do Estado de São Paulo (UNIVESP).	
+		
+		%\vspace{0.7cm}
+		
+		%Mediador: \@tutor
+		
+		
+		}
+		}
+	
+		\vfill
+		
+		\imprimirlocal \\
+		\imprimirdata
+		
+	\end{center}
+	\newpage
+}
+
+
+\newcommand{\imprimirresumo}[2]{
+	\noindent
+	\@autoresbibliografia. \textbf{\imprimirtitulo}. 00f.
+	Relatório Técnico-Científico. \@curso\ –
+	\textbf{Universidade Virtual do Estado de São Paulo}. Tutor: \@tutor. Polo \imprimirlocal , \imprimirdata.	
+
+	\bigskip
+	\bigskip
+	{
+	\centering
+	\section*{Resumo}
+	}
+	#1
+	
+	\bigskip
+	\textbf{PALAVRAS-CHAVE:} #2.
+	\newpage
+}
+
+\newcommand{\imprimirabstract}[2]{
+	\noindent
+	\@autoresbibliografia. \textbf{\@tituloabstract}. 00f.Technical-Scientific Report. \@curso\ – \textbf{Universidade Virtual do Estado de São Paulo}. Adviser Tutor: \@tutor. Polo \imprimirlocal, \imprimirdata.
+
+	\bigskip
+	\bigskip
+	{
+		\centering
+	\section*{Abstract}
+	}
+	#1
+
+	\bigskip
+	\textbf{KEYWORDS:} #2.
+	\newpage
+}
