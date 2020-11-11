@@ -1,14 +1,21 @@
 % texlive, texlive-publishers, texlive-lang-portuguese
 
 \documentclass[a4paper,openright, oneside, article, 12pt, brazil]{abntex2}
+\usepackage[style=abnt]{biblatex}
+
+% Para usar o estilo númerico de citação, descomente a linha abaixo
+% e comente ou remova a de cima
+
+%\usepackage[style=abnt-numeric]{biblatex}
+
+\addbibresource{bibliografia.bib}
+
+\usepackage{univesp_preambulo}
 
 \usepackage{indentfirst}
-\usepackage[alf, abnt-full-initials=yes]{abntex2cite}
-
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{float}
-\usepackage{univesp_preambulo}
 \usepackage{fancyhdr}
 \usepackage{subcaption}
 
@@ -100,7 +107,7 @@
 \newpage
 \postextual
 
-\bibliography{bibliografia}
+\printbibliography
 
 \anexos
 
