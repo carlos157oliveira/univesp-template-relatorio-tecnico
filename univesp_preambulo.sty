@@ -91,11 +91,14 @@
 
 
 \newcommand{\imprimirresumo}[2]{
-	\noindent
-	\@autoresbibliografia. \textbf{\imprimirtitulo}. 00f.
+	{
+		\setlength{\parindent}{0pt}
+		\@autoresbibliografia.
+	}
+	\textbf{\imprimirtitulo}. 00f.
 	Relatório Técnico-Científico. \@curso\ –
 	\textbf{Universidade Virtual do Estado de São Paulo}. Tutor: \@tutor. Polo \imprimirlocal , \imprimirdata.	
-
+		
 	\bigskip
 	\bigskip
 	{
@@ -110,8 +113,11 @@
 }
 
 \newcommand{\imprimirabstract}[2]{
-	\noindent
-	\@autoresbibliografia. \textbf{\@tituloabstract}. 00f.Technical-Scientific Report. \@curso\ – \textbf{Universidade Virtual do Estado de São Paulo}. Adviser Tutor: \@tutor. Polo \imprimirlocal, \imprimirdata.
+	{
+		\setlength{\parindent}{0pt}
+		\@autoresbibliografia.
+	}
+	\textbf{\@tituloabstract}. 00f.Technical-Scientific Report. \@curso\ – \textbf{Universidade Virtual do Estado de São Paulo}. Adviser Tutor: \@tutor. Polo \imprimirlocal, \imprimirdata.
 
 	\bigskip
 	\bigskip
