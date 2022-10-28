@@ -36,9 +36,38 @@ tópico
 
 Há também um arquivo **bibliografia.bib**, que pode ser usado para preencher
 dados bibliográficos e deixar que o compilador cuide da formatação
-(no nosso caso, através do **abntex2**). Os editores desse tipo de arquivo
+(no nosso caso, através do **abntex2**). Alguns editores desse tipo de arquivo, como [TeXstudio](https://www.texstudio.org)
 normalmente apresentam os vários formatos de bibliografias e os campos
 obrigatórios e opcionais dentro de cada um.
+
+## Dicas de Comandos
+
+Para instalar no Ubuntu e derivados as dependências desse projeto:
+
+```sh
+sudo apt install texlive texlive-publishers texlive-lang-portuguese texlive-bibtex-extra biber
+```
+
+Caso tenha interesse de usar LaTeX pelo terminal, para compilar existe um *makefile* sendo distribuído com esse projeto e invocado convencionalmente com `make`.
+Use `make clean` para apagar a enxurrada de arquivos auxiliares.
+
+Para ser mais prático, você pode botar no seu arquivo de configuração do terminal Linux (como o `.bashrc`) a seguinte função para ser usada em qualquer projeto envolvendo LaTeX:
+
+```sh
+function compile-latex () {
+	[ ! -f "$1" ] && echo Arquivo não encontrado! && return 1
+	latex --output-format=pdf $1
+	biber ${1%.tex}.bcf
+	latex --output-format=pdf $1
+	latex --output-format=pdf $1
+}
+```
+
+Invocada assim:
+
+```sh
+compile-latex relatorio.tex
+```
 
 ## Informações Adicionais
 
